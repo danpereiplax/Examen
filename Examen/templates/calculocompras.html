@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h2 class="menu-title">Cálculo de Compras</h2>
+  <form method="POST" action="" class="purchase-form">
+    <div>
+      <label for="name">Ingresa tu nombre</label>
+      <input type="text" id="name" name="name" class="ingreso-de-datos" required>
+    </div>
+    <div>
+      <label for="age">Ingresa tu edad</label>
+      <input type="number" id="age" name="age" class="ingreso-de-datos" required>
+    </div>
+    <div>
+      <label for="quantity">Ingresa la cantidad de tarros de pintura a comprar</label>
+      <input type="number" id="quantity" name="quantity" class="ingreso-de-datos" required>
+    </div>
+    <div>
+      <button type="submit">Calcular</button>
+    </div>
+  </form>
+
+  {% if request.method == 'POST' %}
+    <div class="result-container">
+      <h3 class="result-title">Resultado</h3>
+      <p>Nombre: {{ name }}</p>
+      <p>Total sin descuento: ${{ total_without_discount }}</p>
+      <p>Total a pagar con descuento: ${{ total_with_discount }}</p>
+    </div>
+  {% endif %}
+{% endblock %}

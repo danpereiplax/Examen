@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h2 class="menu-title">Inicio de Sesión</h2>
+  <form method="POST" action="" class="login-form">
+    <div>
+      <label for="username">Ingresa tu nombre de usuario</label>
+      <input type="text" id="username" name="username" class="ingreso-de-datos" required>
+    </div>
+    <div>
+      <label for="password">Ingresa tu contraseña</label>
+      <input type="password" id="password" name="password" class="ingreso-de-datos" required>
+    </div>
+    <div>
+      <button type="submit">Verificar</button>
+    </div>
+  </form>
+
+  {% if request.method == 'POST' %}
+    <div class="result-container">
+      <h3 class="result-title">Resultado</h3>
+      <p>{{ welcome_message }}</p>
+    </div>
+  {% endif %}
+{% endblock %}

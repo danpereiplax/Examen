@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h2 class="menu-title">Menú Principal</h2>
+  <div class="button-container">
+    <a href="{{ url_for('exercise1') }}" class="exercise-button" id="exercise1">Ejercicio 1</a>
+    <a href="{{ url_for('exercise2') }}" class="exercise-button" id="exercise2">Ejercicio 2</a>
+  </div>
+{% endblock %}
